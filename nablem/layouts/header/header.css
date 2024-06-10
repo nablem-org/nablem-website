@@ -1,0 +1,4 @@
+.nablem-header nb-container {
+    display: flex;
+    justify-content: space-between;
+}
