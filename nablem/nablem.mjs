@@ -8,7 +8,3 @@
 // Components must be initialized first since layouts may use 'em.
 import "./components/components.mjs";
 import "./layouts/layouts.mjs";
-
-window.onload = () => {
-  document.body.append(document.createElement("nb-loader"));
-};
