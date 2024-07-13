@@ -1,0 +1,131 @@
+:root {
+    --body: rgb(9, 11, 25);
+    --navbar: rgb(16, 19, 47);
+}
+
+body {
+    background-color: var(--body);
+}
+
+/* || Bootstrap Extent */
+
+.bg-nablem-body {
+    background-color: var(--body);
+}
+
+/* || Bootstrap Extent -> Animations */
+
+.anim-fade-down {
+    animation: anim-fade-down .5s ease-in-out forwards;
+}
+
+@keyframes anim-fade-down {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* || Navbar */
+
+.navbar {
+    color: white;
+    background-color: var(--navbar);
+}
+
+/* || Shows Selector -> Outdoor */
+
+.outdoor {
+    background: url(/imgs/iso.png) no-repeat 112%;
+    background-size: 70vw;
+    margin: 0 0 32px;
+    overflow: hidden;
+    animation: outdoor-bg-appear 1s ease-in-out forwards;
+}
+
+
+@keyframes outdoor-bg-appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        background-position-x: 100%;
+    }
+}
+
+.outdoor-content {
+    padding: 70px 80px;
+    box-shadow: 4px 0 12px 8px var(--body);
+}
+
+.outdoor-content-animated {
+    animation: outdoor-content-items-appear 1s ease-in-out forwards;
+}
+
+@keyframes outdoor-content-items-appear {
+    from {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.outdoor-content p {
+    max-width: 250px;
+}
+
+/* || Shows Selector -> Categories */
+
+.categories-list {
+    position: relative;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    list-style: none;
+}
+
+.categories-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    list-style: none;
+}
+
+.category-show {
+    width: 100%;
+    max-width: 300px;
+    min-width: 300px;
+    height: 140px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.category-show img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* || Search Page -> Title */
+
+#search-title svg {
+    animation: loading 1s ease-in-out infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
