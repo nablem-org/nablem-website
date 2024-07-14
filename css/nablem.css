@@ -1,13 +1,44 @@
 :root {
-    --body: rgb(9, 11, 25);
-    --navbar: rgb(16, 19, 47);
+    --body: #090b19;
+    --navbar: #10132f;
 }
 
 body {
     background-color: var(--body);
 }
 
+.bubble
+{
+   position: relative;
+   width: 355px;
+   height: 160px;
+   padding: 4px;
+   background: #10132f;
+   -webkit-border-radius: 12px;
+   -moz-border-radius: 12px;
+   border-radius: 12px;
+}
+
+.bubble:after
+{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 20px 0 20px 20px;
+    border-color: transparent #10132f;
+    display: block;
+    width: 0;
+    z-index: 1;
+margin-top: -20px;
+    right: -20px;
+    top: 70%;
+}
+
 /* || Bootstrap Extent */
+
+.bg-nablem-navbar {
+    background-color: var(--navbar);
+}
 
 .bg-nablem-body {
     background-color: var(--body);
@@ -117,7 +148,8 @@ body {
 
 /* || Search Page -> Title */
 
-#search-title svg {
+#search-title svg,
+.loading {
     animation: loading 1s ease-in-out infinite;
 }
 
@@ -128,4 +160,64 @@ body {
     to {
         transform: rotate(360deg);
     }
+}
+
+/* || Show Display -> Quick Links */
+
+.quick-links {
+    text-align: right;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.quick-links svg {
+    width: 12px;
+    margin-top: -3px;
+    margin-right: 4px;
+}
+
+.quick-links a {
+    margin: 0 4px;
+    text-decoration: none;
+    color: white;
+}
+
+.quick-links a:hover {
+    text-decoration: underline;
+}
+
+/* || Show Display -> Episodes / Chapters */
+
+.episodes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px 30px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-height: 220px;
+    overflow: auto;
+}
+
+.episode-link {
+    display: block;
+    text-decoration: none;
+    color: white;
+    transition: transform .2s ease-in-out;
+}
+
+.episode-link:hover {
+    transform: scale(95%);
+}
+
+.episode-thumb {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 16px;
+}
+
+.episode-index {
+    margin-top: 8px;
+    margin-left: 12px;
+    font-size: 0.8rem;
 }

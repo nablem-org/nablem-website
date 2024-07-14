@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Nablem</title>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          crossorigin="anonymous">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="/css/nablem.css">
+</head>
+
+<body data-bs-theme="dark">
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-md-block d-lg-none" href="/">Nablem
+                Studios</a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#nablem-navbar"
+                    aria-controls="nablem-navbar" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="nablem-navbar">
+                <div
+                     class="d-flex flex-md-column flex-lg-row justify-content-between align-items-center w-100 py-md-3 py-lg-0 gap-md-2 gap-lg-0">
+                    <a class="navbar-brand d-md-none d-lg-block"
+                       href="/">Nablem</a>
+
+                    <form class="d-flex" role="search" action="/search/">
+                        <div class="input-group">
+                            <input class="form-control" type="search" name="q"
+                                   placeholder="Search Nablem..."
+                                   aria-label="Search"
+                                   aria-describedby="search-btn"
+                                   id="search-box">
+                            <button class="btn btn-dark border border-start-0"
+                                    type="submit" id="search-btn">
+                                <i data-lucide="search"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="d-flex gap-2 align-items-center">
+                        <div
+                             class="form-check form-switch d-flex align-items-center">
+                            <input type="checkbox" id="dark-mode-toggler"
+                                   class="form-check-input" role="switch">
+                            <label for="dark-mode-toggler"
+                                   class="form-check-label ms-2">
+                                <i data-lucide="moon-star"></i>
+                            </label>
+                        </div>
+
+                        <div class="dropdown">
+                            <button class="btn btn-transparent dropdown-toggle"
+                                    type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                    id="user-dropdown"></button>
+
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item" href="#">Logout
+                                    :&lpar;</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container anim-fade-down">
+        <div style="background: url(/imgs/shows/skibidyplanet.png) center center; background-size: cover; min-height: 300px;"
+             class="rounded-3 rounded-top-0 shadow-lg">
+        </div>
+
+        <div class="mt-2 quick-links">
+            <a href="#"><i data-lucide="notebook-pen"></i>Add to your mural</a>
+            |
+            <a href="#"><i data-lucide="message-circle-more"></i>Go to
+                reviews</a> |
+            <a href="#" data-bs-toggle="modal" data-bs-target="#report-modal"><i
+                   data-lucide="shield-alert"></i>Report something</a> |
+            <a href="#"><i data-lucide="circle-off"></i>Blacklist</a>
+        </div>
+
+        <div class="mt-4 row gap-5">
+            <!-- Show Info Col -->
+            <div class="col-md-4">
+                <h2 class="mb-2">
+                    <span class="text-success"
+                          title="This is an approved show by Nablem.">
+                        <i data-lucide="badge-check"></i>
+                    </span>
+                    <span class="align-middle">Skibidy Planet</span>
+                </h2>
+
+                <p class="mb-4">By <a href="/profile?user=nablemstudios">Nablem Studios</a></p>
+
+                <p class="mb-3">
+                    <span class="border rounded p-2">
+                        <i data-lucide="tv-minimal"></i> Anime
+                    </span>
+                </p>
+
+                <p class="text-danger fw-bold align-bottom">
+                    <i data-lucide="heart"></i> 320 people love this
+                </p>
+
+                <p style="text-align: justify;">Lorem ipsum, dolor sit amet
+                    consectetur adipisicing elit.
+                    Tempore, dolorem. Voluptas quod, doloribus laborum ratione
+                    magnam est numquam libero voluptatibus nisi cumque.</p>
+
+                <div class="d-flex justify-content-between">
+                    <button class="btn btn-outline-primary">
+                        <i data-lucide="play"></i> Continue
+                    </button>
+
+                    <div>
+                        <a href="#" class="align-middle">Share</a>
+                        <button class="btn btn-outline-primary ms-2 me-1">
+                            <i data-lucide="thumbs-up"></i>
+                        </button>
+                        <button class="btn btn-outline-danger">
+                            <i data-lucide="thumbs-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Episodes / Chapters Col -->
+            <div class="col bg-nablem-navbar p-3 rounded-3">
+                <!-- https://picsum.photos/640/360 -->
+
+                <div class="mb-3">
+                    <h3 class="d-inline-block align-middle me-2">Episodes</h3>
+                    <select class="form-select d-inline-block w-25">
+                        <option value="1" selected>Season 1</option>
+                        <option value="2">Season 2</option>
+                        <option value="3">Season 3</option>
+                    </select>
+                </div>
+
+                <ul class="episodes-grid">
+                    <li>
+                        <a href="/watch/" class="episode-link">
+                            <img src="https://picsum.photos/512/256" alt=""
+                                 class="episode-thumb">
+                            <p class="episode-index">Ep. 1</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/watch/" class="episode-link">
+                            <img src="https://picsum.photos/512/256" alt=""
+                                 class="episode-thumb">
+                            <p class="episode-index">Ep. 2</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/watch/" class="episode-link">
+                            <img src="https://picsum.photos/512/256" alt=""
+                                 class="episode-thumb">
+                            <p class="episode-index">Ep. 3</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/watch/" class="episode-link">
+                            <img src="https://picsum.photos/512/256" alt=""
+                                 class="episode-thumb">
+                            <p class="episode-index">Ep. 4</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/watch/" class="episode-link">
+                            <img src="https://picsum.photos/512/256" alt=""
+                                 class="episode-thumb">
+                            <p class="episode-index">Ep. 5</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/watch/" class="episode-link">
+                            <img src="https://picsum.photos/512/256" alt=""
+                                 class="episode-thumb">
+                            <p class="episode-index">Ep. 6</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/watch/" class="episode-link">
+                            <img src="https://picsum.photos/512/256" alt=""
+                                 class="episode-thumb">
+                            <p class="episode-index">Ep. 7</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/watch/" class="episode-link">
+                            <img src="https://picsum.photos/512/256" alt=""
+                                 class="episode-thumb">
+                            <p class="episode-index">Ep. 8</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/watch/" class="episode-link">
+                            <img src="https://picsum.photos/512/256" alt=""
+                                 class="episode-thumb">
+                            <p class="episode-index">Ep. 9</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/watch/" class="episode-link">
+                            <img src="https://picsum.photos/512/256" alt=""
+                                 class="episode-thumb">
+                            <p class="episode-index">Ep. 10</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </main>
+
+    <!-- Modals -->
+    <div class="modal fade" tabindex="-1" id="report-modal">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-3"><i
+                           data-lucide="shield-alert" class="align-baseline"></i> Report Something</h1>
+                    <button type="button" class="btn-close"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Oops. Did something wrong happened? Don't worry, we're
+                        here to help! Report to us the problem you experienced
+                        and we'll reach out to you as soon as possible.
+                    </p>
+
+                    <form id="report-form">
+                        <div class="mb-3">
+                            <label for="report-category"
+                                   class="form-label small">What is your report
+                                related to?</label>
+                            <select class="form-select" id="report-category">
+                                <option selected="selected" disabled>Select
+                                    report category</option>
+                                <option>Playback/Reading issues</option>
+                                <option>Content issues</option>
+                                <option>Performance issues</option>
+                                <option>Language issues</option>
+                                <option>Interface issues</option>
+                                <option>Device Compatibility issues</option>
+                                <option>Security issues</option>
+                                <option>Feedback</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="report-message" class="form-label small">What happened?</label>
+                            <textarea id="report-message" class="form-control" maxlength="300"></textarea>
+                            <div class="form-text text-end" id="report-message-help">
+                                (0/?)
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="report-email" class="form-label small">The email that we will enter in contact.</label>
+                            <input id="report-email" class="form-control" value="user@email.com" disabled/>
+                            <div class="form-text text-end">
+                                You can change this in your <a href="/profile/settings#email">account settings</a>.
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer d-flex">
+                    <button type="button" class="btn btn-secondary flex-grow-1" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger flex-grow-1" id="report-btn">
+                        Report
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"></script>
+    <script>
+        lucide.createIcons();
+        document.querySelector(
+            "#user-dropdown"
+        ).innerHTML = `<svg width="32" height="32" data-jdenticon-value="${new Date().getTime()}"></svg>`;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jdenticon@3.3.0/dist/jdenticon.min.js"
+            integrity="sha384-LfouGM03m83ArVtne1JPk926e3SGD0Tz8XHtW2OKGsgeBU/UfR0Fa8eX+UlwSSAZ"
+            crossorigin="anonymous" async></script>
+
+    <!-- Search Script -->
+    <script>
+        window.onload = async () => {
+            const url = new URL(location.href);
+            const showId = url.searchParams.get("id");
+
+        }
+    </script>
+
+    <!-- Report Script -->
+     <script>
+        (function() {
+            document.getElementById("report-btn").onclick = async (ev) => {
+                const form = document.getElementById("report-form");
+                const btn = ev.target;
+                const category = document.getElementById("report-category").value;
+                const message = document.getElementById("report-message").value;
+
+                category.disabled = true;
+                message.disabled = true;
+                btn.innerHTML = '<i data-lucide="loader-circle" class="loading small align-middle"></i> Reporting...';
+                btn.disabled = true;
+                lucide.createIcons();
+
+                await new Promise(r => setTimeout(r, 3000));
+
+                form.reset();
+                category.disabled = false;
+                message.disabled = false;
+                btn.innerHTML = '<i data-lucide="check" class="small align-middle"></i> Reported!';
+                lucide.createIcons();
+
+                await new Promise(r => setTimeout(r, 3000));
+                btn.disabled = false;
+                btn.textContent = 'Report';
+            }
+
+            /** REPORT MESSAGE **/
+
+            const reportMessage = document.getElementById("report-message");
+            const maxLength = reportMessage.getAttribute("maxlength");
+            const reportMessageHelp = document.getElementById("report-message-help");
+
+            function updateHelp() {
+                const length = reportMessage.value.length;
+                const help = `(${length}/${maxLength})`;
+                reportMessageHelp.textContent = help;
+            }
+
+            updateHelp();
+            reportMessage.onkeyup = updateHelp;
+        })();
+     </script>
+</body>
+
+</html>
