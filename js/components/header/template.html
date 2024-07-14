@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand d-md-block d-lg-none" href="/">Nablem Studios</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#nablem-navbar" aria-controls="nablem-navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="nablem-navbar">
+      <div
+           class="d-flex flex-md-column flex-lg-row justify-content-between align-items-center w-100 py-md-3 py-lg-0 gap-md-2 gap-lg-0">
+        <a class="navbar-brand d-md-none d-lg-block" href="/">Nablem</a>
+
+        <form class="d-flex" role="search" action="/search/">
+          <div class="input-group">
+            <input type="hidden" name="from" value="/">
+            <input class="form-control rounded rounded-end-0" type="search"
+                   name="q" placeholder="Search Nablem..." aria-label="Search"
+                   aria-describedby="search-btn" id="search-box">
+            <button class="btn btn-dark border border-start-0" type="submit"
+                    id="search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </form>
+
+        <div class="dropdown">
+          <button class="btn btn-transparent dropdown-toggle" type="button"
+                  data-bs-toggle="dropdown" aria-expanded="false"
+                  id="user-dropdown"></button>
+
+          <ul class="dropdown-menu">
+            <li class="dropdown-item" href="#">Logout :&lpar;
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

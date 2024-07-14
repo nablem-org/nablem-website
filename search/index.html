@@ -10,64 +10,15 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         crossorigin="anonymous">
-  
-  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script src="https://kit.fontawesome.com/d56aedba85.js"
+          crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="/css/nablem.css">
 </head>
 
 <body data-bs-theme="dark">
-  <!-- Header / Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container">
-      <a class="navbar-brand d-md-block d-lg-none" href="/">Nablem Studios</a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#nablem-navbar" aria-controls="nablem-navbar"
-              aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="nablem-navbar">
-        <div
-             class="d-flex flex-md-column flex-lg-row justify-content-between align-items-center w-100 py-md-3 py-lg-0 gap-md-2 gap-lg-0">
-          <a class="navbar-brand d-md-none d-lg-block" href="/">Nablem</a>
-
-          <form class="d-flex" role="search" action="/search/">
-            <div class="input-group">
-              <input class="form-control" type="search" name="q"
-                     placeholder="Search Nablem..." aria-label="Search"
-                     aria-describedby="search-btn" id="search-box">
-              <button class="btn btn-dark border border-start-0" type="submit"
-                      id="search-btn">
-                <i data-lucide="search"></i>
-              </button>
-            </div>
-          </form>
-
-          <div class="d-flex gap-2 align-items-center">
-            <div class="form-check form-switch d-flex align-items-center">
-              <input type="checkbox" id="dark-mode-toggler"
-                     class="form-check-input" role="switch">
-              <label for="dark-mode-toggler" class="form-check-label ms-2">
-                <i data-lucide="moon-star"></i>
-              </label>
-            </div>
-
-            <div class="dropdown">
-              <button class="btn btn-transparent dropdown-toggle" type="button"
-                      data-bs-toggle="dropdown" aria-expanded="false"
-                      id="user-dropdown"></button>
-
-              <ul class="dropdown-menu">
-                <li class="dropdown-item" href="#">Logout :&lpar;</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <nb-header></nb-header>
 
   <main class="container my-4">
     <div class="text-center">
@@ -129,24 +80,20 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
           crossorigin="anonymous"></script>
-  <script>
-    document.querySelector(
-      "#user-dropdown"
-    ).innerHTML = `<svg width="32" height="32" data-jdenticon-value="${new Date().getTime()}"></svg>`;
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/jdenticon@3.3.0/dist/jdenticon.min.js"
           integrity="sha384-LfouGM03m83ArVtne1JPk926e3SGD0Tz8XHtW2OKGsgeBU/UfR0Fa8eX+UlwSSAZ"
           crossorigin="anonymous" async></script>
 
+  <script src="/js/nablem.min.js"></script>
+
   <!-- Search Script -->
   <script>
-    window.onload = async () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchTitle = document.getElementById("search-title");
 
       const messages = ["Searching", "Looking up", "Hold tight", "Wait a sec", "Hold your horses", "Travelling", "Running"];
       const message = messages[Math.floor(Math.random() * messages.length)];
-      searchTitle.innerHTML = `<i data-lucide="loader-circle" style="vertical-align: baseline;" class="me-2"></i>${message}...`;
-      lucide.createIcons();
+      searchTitle.innerHTML = `<i class="fa-solid fa-circle-notch loading me-3" style="vertical-align: baseline;" class="me-2"></i>${message}...`;
 
       const url = new URL(location.href);
       const back = url.searchParams.get("from") || "/";
@@ -167,7 +114,7 @@
 
       // Adding to session storage
       sessionStorage.setItem("lq", query);
-    }
+    });
   </script>
 </body>
 

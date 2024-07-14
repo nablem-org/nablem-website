@@ -1,0 +1,89 @@
+<div class="modal fade" tabindex="-1" id="report-modal">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3">
+          <i class="fa-solid fa-circle-exclamation"></i> Report Something
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Oops. Did something wrong happened? Don't worry, we're here to help!
+          Report to us the problem you experienced and we'll reach out to you as
+          soon as possible.
+        </p>
+
+        <form id="report-form">
+          <div class="mb-3">
+            <label for="report-category" class="form-label small"
+              >What is your report related to?</label
+            >
+            <select class="form-select" id="report-category">
+              <option selected="selected" disabled>
+                Select report category
+              </option>
+              <option>Playback/Reading issues</option>
+              <option>Content issues</option>
+              <option>Performance issues</option>
+              <option>Language issues</option>
+              <option>Interface issues</option>
+              <option>Device Compatibility issues</option>
+              <option>Security issues</option>
+              <option>Feedback</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="report-message" class="form-label small"
+              >What happened?</label
+            >
+            <textarea
+              id="report-message"
+              class="form-control"
+              maxlength="300"
+            ></textarea>
+            <div class="form-text text-end" id="report-message-help">(0/?)</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="report-email" class="form-label small"
+              >The email that we will enter in contact.</label
+            >
+            <input
+              id="report-email"
+              class="form-control"
+              value="user@email.com"
+              disabled
+            />
+            <div class="form-text text-end">
+              You can change this in your
+              <a href="/profile/settings#email">account settings</a>.
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer d-flex">
+        <button
+          type="button"
+          class="btn btn-secondary flex-grow-1"
+          data-bs-dismiss="modal"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger flex-grow-1"
+          id="report-btn"
+        >
+          Report
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

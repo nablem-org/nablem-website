@@ -1,190 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nablem</title>
 
-  <title>Nablem</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
 
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        crossorigin="anonymous">
-  
-  <script src="https://unpkg.com/lucide@latest"></script>
+    <script
+      src="https://kit.fontawesome.com/d56aedba85.js"
+      crossorigin="anonymous"
+    ></script>
 
-  <link rel="stylesheet" href="/css/nablem.css">
-</head>
+    <link rel="stylesheet" href="/css/nablem.css" />
+  </head>
 
-<body data-bs-theme="dark">
-  <!-- Header / Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container">
-      <a class="navbar-brand d-md-block d-lg-none" href="/">Nablem Studios</a>
+  <body data-bs-theme="dark">
+    <nb-header></nb-header>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#nablem-navbar" aria-controls="nablem-navbar"
-              aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="nablem-navbar">
-        <div
-             class="d-flex flex-md-column flex-lg-row justify-content-between align-items-center w-100 py-md-3 py-lg-0 gap-md-2 gap-lg-0">
-          <a class="navbar-brand d-md-none d-lg-block" href="/">Nablem</a>
-
-          <form class="d-flex" role="search" action="/search/">
-            <div class="input-group">
-              <input type="hidden" name="from" value="/">
-              <input class="form-control" type="search" name="q"
-                     placeholder="Search Nablem..." aria-label="Search"
-                     aria-describedby="search-btn" id="search-box">
-              <button class="btn btn-dark border border-start-0" type="submit"
-                      id="search-btn">
-                <i data-lucide="search"></i>
-              </button>
-            </div>
-          </form>
-
-          <div class="d-flex gap-2 align-items-center">
-            <div class="form-check form-switch d-flex align-items-center">
-              <input type="checkbox" id="dark-mode-toggler"
-                     class="form-check-input" role="switch">
-              <label for="dark-mode-toggler" class="form-check-label ms-2">
-                <i data-lucide="moon-star"></i>
-              </label>
-            </div>
-
-            <div class="dropdown">
-              <button class="btn btn-transparent dropdown-toggle" type="button"
-                      data-bs-toggle="dropdown" aria-expanded="false"
-                      id="user-dropdown"></button>
-
-              <ul class="dropdown-menu">
-                <li class="dropdown-item" href="#">Logout :&lpar;</li>
-              </ul>
+    <main class="container my-4">
+      <div class="outdoor d-flex border rounded-4 shadow-lg">
+        <div class="bg-nablem-body outdoor-content">
+          <div class="outdoor-content-animated">
+            <h2>Season 2 <strong>out now</strong>!</h2>
+            <h3>ISO's Planet</h3>
+            <p>Uncover the skibidy secrets of a sigma ISO planet.</p>
+            <div>
+              <button class="btn btn-primary me-2">Watch now!</button>
+              <a href="#" class="link-secondary text-decoration-none">
+                <i class="fa-regular fa-bookmark"></i> Bookmark for later
+              </a>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </nav>
 
-  <main class="container my-4">
-    <div class="outdoor d-flex border rounded-4 shadow-lg">
-      <div class="bg-nablem-body outdoor-content">
-        <div class="outdoor-content-animated">
-          <h2>Season 2 <strong>out now</strong>!</h2>
-          <h3>ISO's Planet</h3>
-          <p>Uncover the skibidy secrets of a sigma ISO planet.</p>
-          <div>
-            <button class="btn btn-primary me-2">Watch now!</button>
-            <a href="#" class="link-secondary text-decoration-none">
-              <i data-lucide="bookmark"></i> Bookmark for later
+      <!-- Tabs -->
+      <div class="mt-4">
+        <ul class="nav nav-underline d-flex gap-4 justify-content-center">
+          <li class="nav-item">
+            <a href="#" class="nav-link active" aria-current="page">
+              <i class="fa-solid fa-thumbtack"></i> Featured
             </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tabs -->
-    <div class="mt-4">
-      <ul class="nav nav-underline d-flex gap-4 justify-content-center">
-        <li class="nav-item">
-          <a href="#" class="nav-link active" aria-current="page">
-            <i data-lucide="pin"></i> Featured
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" aria-current="page">
-            <i data-lucide="sparkles"></i> For You
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" aria-current="page">
-            <i data-lucide="badge-japanese-yen"></i> Manga
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" aria-current="page">
-            <i data-lucide="gamepad-2"></i> Games
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" aria-current="page">
-            <i data-lucide="tv-minimal"></i> Anime
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" aria-current="page">
-            <i data-lucide="tv-minimal"></i> Shows
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" aria-current="page">
-            <i data-lucide="music"></i> Music
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Categories & Shows -->
-    <div class="mt-3 anim-fade-down">
-      <section class="my-5">
-        <h2 class="mb-4">Category</h2>
-
-        <ul class="categories-list d-flex gap-3 p-0">
-          <li class="category-show">
-            <img src="/imgs/shows/deadplanet.jpg" />
           </li>
-          <li class="category-show">
-            <img src="/imgs/shows/isoplanet.png" />
+          <li class="nav-item">
+            <a href="#" class="nav-link" aria-current="page">
+              <i class="fa-regular fa-star"></i> For You
+            </a>
           </li>
-          <li class="category-show">
-            <img src="/imgs/shows/skibidyplanet.png" />
+          <li class="nav-item">
+            <a href="#" class="nav-link" aria-current="page">
+              <i class="fa-solid fa-yen-sign"></i> Manga
+            </a>
           </li>
-          <li class="category-show">
-            <img src="/imgs/shows/isoplanet.png" />
+          <li class="nav-item">
+            <a href="#" class="nav-link" aria-current="page">
+              <i class="fa-solid fa-gamepad"></i> Games
+            </a>
           </li>
-          <li class="category-show">
-            <img src="/imgs/shows/deadplanet.jpg" />
+          <li class="nav-item">
+            <a href="#" class="nav-link" aria-current="page">
+              <i class="fa-solid fa-display"></i> Anime
+            </a>
           </li>
-          <li class="category-show">
-            <img src="/imgs/shows/skibidyplanet.png" />
+          <li class="nav-item">
+            <a href="#" class="nav-link" aria-current="page">
+              <i class="fa-solid fa-display"></i> Shows
+            </a>
           </li>
-          <li class="category-show">
-            <img src="/imgs/shows/isoplanet.png" />
+          <li class="nav-item">
+            <a href="#" class="nav-link" aria-current="page">
+              <i class="fa-solid fa-music"></i> Music
+            </a>
           </li>
         </ul>
-      </section>
-    </div>
-  </main>
+      </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-          crossorigin="anonymous"></script>
-  <script>
-    lucide.createIcons();
-    document.querySelector(
-      "#user-dropdown"
-    ).innerHTML = `<svg width="32" height="32" data-jdenticon-value="${new Date().getTime()}"></svg>`;
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/jdenticon@3.3.0/dist/jdenticon.min.js"
-          integrity="sha384-LfouGM03m83ArVtne1JPk926e3SGD0Tz8XHtW2OKGsgeBU/UfR0Fa8eX+UlwSSAZ"
-          crossorigin="anonymous" async></script>
-  
-  <!-- Search Script -->
-   <script>
-    const lq = sessionStorage.getItem("lq");
-    if (lq) {
-      const box = document.getElementById("search-box");
-      box.value = lq;
-      function updateLq() {
-        sessionStorage.setItem("lq", box.value);
-      }
-      box.onkeydown = updateLq;
-      box.onchange = updateLq;
-    }
-   </script>
-</body>
+      <!-- Categories & Shows -->
+      <div class="mt-3 anim-fade-down">
+        <section class="my-5">
+          <h2 class="mb-4">Category</h2>
 
+          <ul class="categories-list d-flex gap-3 p-0">
+            <li class="category-show">
+              <img src="/imgs/shows/deadplanet.jpg" />
+            </li>
+            <li class="category-show">
+              <img src="/imgs/shows/isoplanet.png" />
+            </li>
+            <li class="category-show">
+              <img src="/imgs/shows/skibidyplanet.png" />
+            </li>
+            <li class="category-show">
+              <img src="/imgs/shows/isoplanet.png" />
+            </li>
+            <li class="category-show">
+              <img src="/imgs/shows/deadplanet.jpg" />
+            </li>
+            <li class="category-show">
+              <img src="/imgs/shows/skibidyplanet.png" />
+            </li>
+            <li class="category-show">
+              <img src="/imgs/shows/isoplanet.png" />
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jdenticon@3.3.0/dist/jdenticon.min.js"
+      integrity="sha384-LfouGM03m83ArVtne1JPk926e3SGD0Tz8XHtW2OKGsgeBU/UfR0Fa8eX+UlwSSAZ"
+      crossorigin="anonymous"
+      async
+    ></script>
+
+    <script src="/js/nablem.min.js"></script>
+  </body>
 </html>
