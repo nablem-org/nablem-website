@@ -4,4 +4,4 @@ import template from "./template.html";
 const templateEl = document.createElement("template");
 templateEl.innerHTML = template;
 
-component("nb-modal-report", template, function () {});
+component("nb-modal-get-show-id", template, function () {});
