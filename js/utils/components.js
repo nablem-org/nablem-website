@@ -1,3 +1,4 @@
+/** @todo Write a doc for this function */
 export function component(name, template, constructor) {
   const templateEl = document.createElement("template");
   templateEl.innerHTML = template;
