@@ -12,6 +12,8 @@ const path = require("path");
 
 // Later-loaded modules
 var esbuild, pug;
+// Later-loaded development modules
+var httpServer;
 
 const IS_DEVELOPMENT = process.argv.includes("-d");
 const BUILD_ROOT = __dirname;
@@ -54,17 +56,7 @@ async function getPageTemplates() {
 
 async function createPage() {}
 
-async function renderTemplate(template, dst) {
-  info(`Rendering ${template} into ${dst.replace(DIST_FOLDER, "")}`);
-  const content = pug.renderFile(path.join(SRC_FOLDER, "pages", template));
-  await fs.writeFile(dst, content);
-}
-
-/*** Main ***/
-
-(async () => {
-  console.log(`Nablem Build Script (${new Date().toLocaleString()})`);
-
+function loadModules() {
   info("Loading modules...");
 
   try {
@@ -78,7 +70,15 @@ async function renderTemplate(template, dst) {
   } catch {
     panic("pug dependency is not installed properly.");
   }
+}
 
+async function renderTemplate(template, dst) {
+  info(`Rendering ${template} into ${dst.replace(DIST_FOLDER, "")}`);
+  const content = pug.renderFile(path.join(SRC_FOLDER, "pages", template));
+  await fs.writeFile(dst, content);
+}
+
+async function build() {
   await prepareDistFolder();
 
   var templates = await getPageTemplates();
@@ -119,4 +119,17 @@ async function renderTemplate(template, dst) {
 
   info("Copying public resources.");
   await fs.cp(PUBLIC_FOLDER, DIST_FOLDER, { recursive: true });
+}
+
+/*** Main ***/
+
+(async () => {
+  console.log(
+    `Nablem Build Script (${
+      IS_DEVELOPMENT ? "DEV MODE " : ""
+    }${new Date().toLocaleString()})`
+  );
+
+  loadModules();
+  await build();
 })();
