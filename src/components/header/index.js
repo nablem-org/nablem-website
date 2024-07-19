@@ -1,7 +1,7 @@
 import { component } from "../../utils/components";
 import template from "./template.html";
 
-component("nb-header", template, function () {
+component("nb-header", template, () => {
   function setUserImage() {
     const dropdown = document.getElementById("user-dropdown");
     dropdown.innerHTML = `<svg width="32" height="32" data-jdenticon-value="${new Date().getTime()}"></svg>`;
@@ -23,9 +23,11 @@ component("nb-header", template, function () {
     el.querySelector("input[name=from]").value = url.pathname;
   }
 
-  this.onConnect = function (el) {
-    setUserImage();
-    setSearchInput();
-    setSearchFrom(el);
+  return {
+    onConnect(el) {
+      setUserImage();
+      setSearchInput();
+      setSearchFrom(el);
+    },
   };
 });
