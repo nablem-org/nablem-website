@@ -1,0 +1,47 @@
+doctype html
+html(lang=en)
+  head
+    include ../templates/head.pug
+    title Nablem Studios - Search
+  body(data-bs-theme="dark")
+    nb-header
+    main.container.my-4
+      .text-center
+        h2#search-title
+      #search-results.visually-hidden
+        .mt-3
+          section.my-5
+            ul.categories-grid.p-0
+              li.category-show
+                img(src="/src/imgs/shows/deadplanet.jpg")
+              li.category-show
+                img(src="/src/imgs/shows/isoplanet.png")
+              li.category-show
+                img(src="/src/imgs/shows/skibidyplanet.png")
+              li.category-show
+                img(src="/src/imgs/shows/isoplanet.png")
+              li.category-show
+                img(src="/src/imgs/shows/skibidyplanet.png")
+              li.category-show
+                img(src="/src/imgs/shows/deadplanet.jpg")
+              li.category-show
+                img(src="/src/imgs/shows/isoplanet.png")
+              li.category-show
+                img(src="/src/imgs/shows/skibidyplanet.png")
+          p.text-center.fw-bold You may also like...
+          section.mb-4
+            ul.categories-grid.p-0
+              li.category-show
+                img(src="/src/imgs/shows/skibidyplanet.png")
+              li.category-show
+                img(src="/src/imgs/shows/isoplanet.png")
+              li.category-show
+                img(src="/src/imgs/shows/skibidyplanet.png")
+              li.category-show
+                img(src="/src/imgs/shows/deadplanet.jpg")
+
+    include ../templates/footer.pug
+
+    //  Search Script 
+    script(src="/src/js/search.js")
+      

@@ -1,0 +1,164 @@
+doctype html
+html(lang=en)
+  head
+    include ../templates/head.pug
+    title Nablem Studios - Show
+  body(data-bs-theme="dark")
+    nb-header
+    main.container.anim-fade-down
+      // Banner
+      .rounded-3.rounded-top-0.shadow-lg(style="background: url(/src/imgs/shows/skibidyplanet.png) center center; background-size: cover; min-height: 300px;")
+      // Quick Links
+      .mt-2.quick-links
+        a(href="#")
+          i.fa-solid.fa-chalkboard
+          |  Add to your mural
+
+        a(href="#")
+          i.fa-regular.fa-comments
+          |  Go to reviews
+
+        a#report-btn(href="#", data-bs-toggle="modal", data-bs-target="#report-modal")
+          i.fa-solid.fa-circle-exclamation
+          |  Report something
+
+        a(href="#")
+          i.fa-solid.fa-ban
+          |  Blacklist
+      
+      // Show Info & Episodes
+      .mt-4.row.gap-5.text-white
+        //  Info Col 
+        .col-md-4
+          h2.mb-2
+            span.text-success(title="This show is approved by Nablem.")
+              i.fa-regular.fa-circle-check.align-middle
+            span.align-middle Skibidy Planet
+          p.mb-4
+            | By 
+            a(href="/profile?user=nablemstudios") Nablem Studios
+          p.mb-3
+            span.border.rounded.p-2
+              i.fa-solid.fa-display
+              |  Anime
+
+          p.text-danger.fw-bold.align-bottom
+            i.fa-solid.fa-heart
+            |  320 people love this
+
+          p(style="text-align: justify").
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, dolorem. Voluptas quod, doloribus laborum ratione magnam est numquam libero voluptatibus nisi cumque.
+            
+          .d-flex.justify-content-between
+            button.btn.btn-outline-primary
+              i.fa-solid.fa-play.me-1
+              |  Continue
+
+            div
+              a.align-middle(href="#") Share
+              button.btn.btn-outline-primary.ms-2.me-1
+                i.fa-regular.fa-thumbs-up
+              button.btn.btn-outline-danger
+                i.fa-regular.fa-thumbs-down
+        
+        //  Episodes / Chapters Col 
+        .col.bg-nablem-navbar.p-3.rounded-3
+          //  https://picsum.photos/640/360 
+          .mb-3
+            h3.d-inline-block.align-middle.me-2 Episodes
+            select.form-select.d-inline-block.w-25
+              option(value="1", selected) Season 1
+              option(value="2") Season 2
+              option(value="3") Season 3
+          ul.episodes-grid
+            li
+              a.episode-link(href="/watch/")
+                img.episode-thumb(src="https://picsum.photos/512/256", alt)
+                p.episode-index Ep. 1
+            li
+              a.episode-link(href="/watch/")
+                img.episode-thumb(src="https://picsum.photos/512/256", alt)
+                p.episode-index Ep. 2
+            li
+              a.episode-link(href="/watch/")
+                img.episode-thumb(src="https://picsum.photos/512/256", alt)
+                p.episode-index Ep. 3
+            li
+              a.episode-link(href="/watch/")
+                img.episode-thumb(src="https://picsum.photos/512/256", alt)
+                p.episode-index Ep. 4
+            li
+              a.episode-link(href="/watch/")
+                img.episode-thumb(src="https://picsum.photos/512/256", alt)
+                p.episode-index Ep. 5
+            li
+              a.episode-link(href="/watch/")
+                img.episode-thumb(src="https://picsum.photos/512/256", alt)
+                p.episode-index Ep. 6
+            li
+              a.episode-link(href="/watch/")
+                img.episode-thumb(src="https://picsum.photos/512/256", alt)
+                p.episode-index Ep. 7
+            li
+              a.episode-link(href="/watch/")
+                img.episode-thumb(src="https://picsum.photos/512/256", alt)
+                p.episode-index Ep. 8
+            li
+              a.episode-link(href="/watch/")
+                img.episode-thumb(src="https://picsum.photos/512/256", alt)
+                p.episode-index Ep. 9
+            li
+              a.episode-link(href="/watch/")
+                img.episode-thumb(src="https://picsum.photos/512/256", alt)
+                p.episode-index Ep. 10
+    
+    //  Modals
+    nb-modal-report
+
+    include ../templates/footer.pug
+    
+    //  Report Script
+    script.
+      (function () {
+        document.getElementById("report-btn").onclick = async (ev) => {
+          const form = document.getElementById("report-form");
+          const btn = ev.target;
+          const category = document.getElementById("report-category").value;
+          const message = document.getElementById("report-message").value;
+
+          category.disabled = true;
+          message.disabled = true;
+          btn.innerHTML =
+            '<i class="fa-solid fa-circle-notch loading"></i> Reporting...';
+          btn.disabled = true;
+
+          await new Promise((r) => setTimeout(r, 3000));
+
+          form.reset();
+          category.disabled = false;
+          message.disabled = false;
+          btn.innerHTML = '<i class="fa-solid fa-check"></i> Reported!';
+
+          await new Promise((r) => setTimeout(r, 3000));
+          btn.disabled = false;
+          btn.textContent = "Report";
+        };
+
+        /** REPORT MESSAGE **/
+
+        const reportMessage = document.getElementById("report-message");
+        const maxLength = reportMessage.getAttribute("maxlength");
+        const reportMessageHelp = document.getElementById(
+          "report-message-help"
+        );
+
+        function updateHelp() {
+          const length = reportMessage.value.length;
+          const help = `(${length}/${maxLength})`;
+          reportMessageHelp.textContent = help;
+        }
+
+        updateHelp();
+        reportMessage.onkeyup = updateHelp;
+      })();
+      

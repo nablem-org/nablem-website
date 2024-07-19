@@ -1,0 +1,82 @@
+doctype html
+html(lang=en)
+  head
+    include ../templates/head.pug
+    title Nablem Studios
+  body(data-bs-theme="dark")
+    nb-header 
+    main.container.my-4
+      .outdoor.d-flex.border.rounded-4.shadow-lg
+        .bg-nablem-body.outdoor-content
+          .outdoor-content-animated
+            h2
+              | Season 2 
+              strong out now
+              | !
+            h3 ISO's Planet
+            p Uncover the skibidy secrets of a sigma ISO planet.
+            div
+              button.btn.btn-primary.me-2 Watch now!
+              a.link-secondary.text-decoration-none(href="#")
+                i.fa-regular.fa-bookmark
+                |  Bookmark for later
+
+      //  Tabs
+      .mt-4
+        ul.nav.nav-underline.d-flex.gap-4.justify-content-center
+          li.nav-item
+            a.nav-link.active(href="#", aria-current="page")
+              i.fa-solid.fa-thumbtack
+              |  Featured
+
+          li.nav-item
+            a.nav-link(href="#", aria-current="page")
+              i.fa-regular.fa-star
+              |  For You
+
+          li.nav-item
+            a.nav-link(href="#", aria-current="page")
+              i.fa-solid.fa-yen-sign
+              |  Manga
+
+          li.nav-item
+            a.nav-link(href="#", aria-current="page")
+              i.fa-solid.fa-gamepad
+              |  Games
+
+          li.nav-item
+            a.nav-link(href="#", aria-current="page")
+              i.fa-solid.fa-display
+              |  Anime
+
+          li.nav-item
+            a.nav-link(href="#", aria-current="page")
+              i.fa-solid.fa-display
+              |  Shows
+
+          li.nav-item
+            a.nav-link(href="#", aria-current="page")
+              i.fa-solid.fa-music
+              |  Music
+
+      //  Categories & Shows 
+      .mt-3.anim-fade-down
+        section.my-5
+          h2.mb-4 Category
+          ul.categories-list.d-flex.gap-3.p-0
+            li.category-show
+              img(src="/src/imgs/shows/deadplanet.jpg")
+            li.category-show
+              img(src="/src/imgs/shows/isoplanet.png")
+            li.category-show
+              img(src="/src/imgs/shows/skibidyplanet.png")
+            li.category-show
+              img(src="/src/imgs/shows/isoplanet.png")
+            li.category-show
+              img(src="/src/imgs/shows/deadplanet.jpg")
+            li.category-show
+              img(src="/src/imgs/shows/skibidyplanet.png")
+            li.category-show
+              img(src="/src/imgs/shows/isoplanet.png")
+
+      include ../templates/footer.pug

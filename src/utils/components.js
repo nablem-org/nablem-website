@@ -1,6 +1,6 @@
 export function component(name, template, constructor) {
   const templateEl = document.createElement("template");
-  templateEl.innerHTML = template;
+  templateEl.innerHTML = atob(template);
 
   const actions = new constructor();
 
