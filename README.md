@@ -1,5 +1,7 @@
 # Nablem Website
 
+![](http://vanilla-js.com/assets/button.png)
+
 Welcome to Nablem's website repository. This project is, and will always be,
 developed under no frameworks nor libraries that fills the client with
 JavaScript files. Only pure JavaScript.
